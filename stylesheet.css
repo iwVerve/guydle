@@ -107,15 +107,15 @@ a {
     font-weight: normal;
 }
 
+.dark {
+    background-color: var(--dark);
+    color: var(--text-dark)
+}
+
 .yellow {
     background-color: var(--yellow);
 }
 
 .green {
     background-color: var(--green);
-}
-
-.dark {
-    background-color: var(--dark);
-    color: var(--text-dark)
 }
