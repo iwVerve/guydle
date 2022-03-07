@@ -27,6 +27,14 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+.about {
+    width: 45em;
+}
+
+a {
+    color: var(--text);
+}
+
 .content {
     display: flex;
     justify-content: center;
