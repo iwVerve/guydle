@@ -109,13 +109,15 @@ a {
 
 .dark {
     background-color: var(--dark);
-    color: var(--text-dark)
+    color: var(--text-dark);
 }
 
 .yellow {
     background-color: var(--yellow);
+    color: var(--text);
 }
 
 .green {
     background-color: var(--green);
+    color: var(--text);
 }
