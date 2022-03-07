@@ -8,6 +8,9 @@
     --green: #282;
     --key: #444;
     --dark: var(--background);
+
+    --button: #333;
+    --button-hover: #555;
 }
 
 html,
@@ -27,14 +30,6 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-.about {
-    width: 45em;
-}
-
-a {
-    color: var(--text);
-}
-
 .content {
     display: flex;
     justify-content: center;
@@ -43,8 +38,39 @@ a {
     flex-direction: column; 
 }
 
+.about {
+    width: 45em;
+}
+
+a {
+    color: var(--text);
+}
+
+.select {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.select-button {
+    padding: 0.4rem;
+    margin: 0.2rem 0.6rem;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: bold;
+    outline: 1px solid var(--outline);
+
+    background-color: var(--button);
+
+    transition: 0.2s;
+}
+
+.select-button:hover {
+    background-color: var(--button-hover);
+}
+
 .game {
-    margin: 2rem;
+    margin: 1rem;
 
     display: flex;
     justify-content: center;
@@ -54,6 +80,7 @@ a {
 
 .clue {
     font-size: 1.5rem;
+    text-align: center;
 }
 
 .word {
