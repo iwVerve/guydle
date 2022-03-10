@@ -35,7 +35,7 @@ function replaceAt(string, index, char) {
 }
 
 function share() {
-    var text = `Guydle ${title}\n`
+    var text = `Guydle ${title}\n${clue}\n`
     for(const word of document.getElementsByClassName('word')) {
         for(const letter of word.children) {
             if (letter.classList.contains('green')) {
