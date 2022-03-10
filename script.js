@@ -21,13 +21,12 @@ function start(d) {
         date = new Date()
         title = `(${date.getDate()}-${date.getMonth()+1}-${date.getFullYear()})`
     }
-    clue = title + '\n'
-    clue += game.substr(0, game.length - 5)
+    clue = game.substr(0, game.length - 5)
 
     guess = ''
     guessNumber = 0
 
-    document.getElementsByClassName('clue')[0].innerText = clue;
+    document.getElementsByClassName('clue')[0].innerText = title + '\n' + clue
 }
 
 function replaceAt(string, index, char) {
