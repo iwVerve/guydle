@@ -15,12 +15,13 @@ function start(d) {
     a = game.split(' ')
     word = a[a.length - 1].toLowerCase()
     if (d == -1) {
-        clue = '(Random)\n'
+        title = '(Random)'
     }
     else {
         date = new Date()
-        clue = `(${date.getDate()}-${date.getMonth()+1}-${date.getFullYear()})\n`
+        title = `(${date.getDate()}-${date.getMonth()+1}-${date.getFullYear()})`
     }
+    clue = title + '\n'
     clue += game.substr(0, game.length - 5)
 
     guess = ''
@@ -31,6 +32,44 @@ function start(d) {
 
 function replaceAt(string, index, char) {
     return string.substr(0, index) + char + string.substr(index + 1)
+}
+
+function share() {
+    var text = `Guydle ${title}\n`
+    for(const word of document.getElementsByClassName('word')) {
+        for(const letter of word.children) {
+            if (letter.classList.contains('green')) {
+                text += '🟩'
+            }
+            else if (letter.classList.contains('yellow')) {
+                text += '🟨'
+            }
+            else {
+                text += '⬛'
+            }
+        }
+
+        text += ' ||'
+
+        for(const letter of word.children) {
+            text += letter.innerHTML.toLowerCase()
+        }
+        text += '||\n'
+    }
+    copy(text)
+}
+
+function copy(text) {
+    navigator.clipboard.writeText(text)
+}
+
+function win() {
+    playing = false
+    var shareButton = document.createElement('button')
+    shareButton.classList.add('share')
+    shareButton.innerText = 'Share Results'
+    shareButton.onclick = share
+    document.getElementsByClassName('game')[0].appendChild(shareButton)
 }
 
 function guessWord() {
@@ -55,7 +94,7 @@ function guessWord() {
         }
     }
     if (c == 5) {
-        playing = false
+        win()
         return
     }
     for(var i = 0; i < 5; i++) {
