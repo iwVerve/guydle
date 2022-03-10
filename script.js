@@ -53,8 +53,9 @@ function share() {
         for(const letter of word.children) {
             text += letter.innerHTML.toLowerCase()
         }
-        text += '||\nhttps://iwverve.github.io/guydle/'
+        text += '||\n'
     }
+    text += 'https://iwverve.github.io/guydle/'
     copy(text)
 }
 
